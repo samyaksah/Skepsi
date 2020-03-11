@@ -52,21 +52,22 @@
         android:layout_marginTop="10dp"
         />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:text="files" />
-
     <Button
         android:id="@+id/play3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="41dp"
         android:text="Play 3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/play3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="files" />
+
 </RelativeLayout>
