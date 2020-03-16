@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="standard" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textSize">30sp</item>
+
+    </style>
+
+    <style name="sansserif" parent="standard">
+        <!--        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
+        <item name="fontFamily">@font/IBMPlexSans-ExtraLight</item>
+    </style>
+
+    <style name="vanillaSans" parent="sansserif">
+        <item name="colorPrimary">@color/standardWhite</item>
+        <item name="colorPrimaryDark">@color/standardWhite</item>
+        <item name="colorAccent">@color/standardWhite</item>
+        <item name="android:textColor">@color/standardBlack</item>
+    </style>
+
+    <style name="darkSans" parent="sansserif">
+        <item name="colorPrimary">@color/standardBlack</item>
+        <item name="colorPrimaryDark">@color/standardBlack</item>
+        <item name="colorAccent">@color/standardBlack</item>
+        <item name="android:textColor">@color/standardWhite</item>
+    </style>
+
 </resources>

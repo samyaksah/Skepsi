@@ -9,4 +9,6 @@
     <string name="prompt_password">4 characters</string>
     <string name="action_sign_in_short">I\'m not sure what goes here</string>
     <string name="action_sign_in">not sure what goes here either</string>
+    <string name="fontoption1">Sans Serif</string>
+    <string name="fontOption2">Serif</string>
 </resources>
