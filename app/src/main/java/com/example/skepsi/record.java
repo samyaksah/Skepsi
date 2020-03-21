@@ -1,9 +1,5 @@
 package com.example.skepsi;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -13,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,9 +54,7 @@ public class record extends AppCompatActivity {
 
         random = new Random();
 
-        for(int i = 0; i< list.size(); i++){
-            fileDir.append(list.get(i) + "\n");
-        }
+
 
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +84,9 @@ public class record extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
 
                     list.add(AudioSavePathInDevice);
+                    for(int i = 0; i< list.size(); i++){
+                        fileDir.append(list.get(i) + "\n");
+                    }
 
                 } else {
                     requestPermission();

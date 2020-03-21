@@ -17,7 +17,7 @@
 
     <style name="sansserif" parent="standard">
         <!--        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
-        <item name="fontFamily">@font/IBMPlexSans-ExtraLight</item>
+        <item name="fontFamily">@font/fontibm</item>
     </style>
 
     <style name="vanillaSans" parent="sansserif">
