@@ -15,23 +15,43 @@
 
     </style>
 
-    <style name="sansserif" parent="standard">
+    <style name="sans" parent="standard">
         <!--        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
-        <item name="fontFamily">@font/fontibm</item>
+        <item name="fontFamily">@font/ibm_plex_sans</item>
     </style>
 
-    <style name="vanillaSans" parent="sansserif">
+    <style name="serif" parent="standard">
+        <!--        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
+        <item name="fontFamily">@font/ibm_plex_sans</item>
+    </style>
+
+    <style name="vanillaSans" parent="sans">
         <item name="colorPrimary">@color/standardWhite</item>
         <item name="colorPrimaryDark">@color/standardWhite</item>
         <item name="colorAccent">@color/standardWhite</item>
         <item name="android:textColor">@color/standardBlack</item>
     </style>
 
-    <style name="darkSans" parent="sansserif">
+    <style name="darkSans" parent="sans">
         <item name="colorPrimary">@color/standardBlack</item>
         <item name="colorPrimaryDark">@color/standardBlack</item>
         <item name="colorAccent">@color/standardBlack</item>
         <item name="android:textColor">@color/standardWhite</item>
     </style>
+
+    <style name="vanillaSerif" parent="serif">
+        <item name="colorPrimary">@color/standardWhite</item>
+        <item name="colorPrimaryDark">@color/standardWhite</item>
+        <item name="colorAccent">@color/standardWhite</item>
+        <item name="android:textColor">@color/standardBlack</item>
+    </style>
+
+    <style name="darkSerif" parent="serif">
+        <item name="colorPrimary">@color/standardBlack</item>
+        <item name="colorPrimaryDark">@color/standardBlack</item>
+        <item name="colorAccent">@color/standardBlack</item>
+        <item name="android:textColor">@color/standardWhite</item>
+    </style>
+
 
 </resources>

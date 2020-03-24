@@ -7,36 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".Settings">
 
-    <LinearLayout
-        style="@style/darkSans"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <RadioGroup
+        android:id="@+id/serifSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RadioGroup
-            android:id="@+id/serifSwitch"
+        <RadioButton
+            android:id="@+id/sansRadioButton"
+            style="@style/darkSans"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:text="@string/font_option1" />
 
-            <RadioButton
-                android:id="@+id/sansRadioButton"
-                style="@style/darkSans"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fontoption1" />
+        <RadioButton
+            android:id="@+id/serifRadioButton"
+            style="@style/darkSans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/font_option2" />
+    </RadioGroup>
 
-            <RadioButton
-                android:id="@+id/serifRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fontOption2" />
-        </RadioGroup>
-    </LinearLayout>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serifSwitch"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="311dp" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

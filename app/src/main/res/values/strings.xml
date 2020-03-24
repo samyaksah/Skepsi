@@ -9,6 +9,11 @@
     <string name="prompt_password">4 characters</string>
     <string name="action_sign_in_short">I\'m not sure what goes here</string>
     <string name="action_sign_in">not sure what goes here either</string>
-    <string name="fontoption1">Sans Serif</string>
-    <string name="fontOption2">Serif</string>
+
+    <string name="font_option1">sans</string>
+    <string name="font_option2">serif</string>
+
+    <string name="color_option1">dark</string>
+    <string name="color_option2">light</string>
+    <string name="color_option3">vignelli</string>
 </resources>
