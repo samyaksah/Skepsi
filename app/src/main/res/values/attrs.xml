@@ -5,4 +5,5 @@
         <attr name="accentColor" format="color"/>
         <attr name="textColor" format="color"/>
         <attr name="backgroundColor" format="color"/>
+    <!--<attr name="standard-font"-->
 </resources>

@@ -16,4 +16,6 @@
     <string name="color_option1">dark</string>
     <string name="color_option2">light</string>
     <string name="color_option3">vignelli</string>
+    <string name="un">Username</string>
+    <string name="pw">Password</string>
 </resources>

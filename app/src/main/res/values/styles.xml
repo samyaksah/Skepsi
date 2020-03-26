@@ -1,12 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
 
     <style name="standard" parent="Theme.AppCompat">
         <item name="windowActionBar">false</item>
@@ -16,13 +9,15 @@
     </style>
 
     <style name="sans" parent="standard">
-        <!--        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
         <item name="fontFamily">@font/ibm_plex_sans</item>
+        <item name="android:fontFamily">@font/ibm_plex_serif</item>
+
     </style>
 
     <style name="serif" parent="standard">
-        <!--        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
-        <item name="fontFamily">@font/ibm_plex_sans</item>
+        <item name="fontFamily">@font/ibm_plex_serif</item>
+        <item name="android:fontFamily">@font/ibm_plex_serif</item>
+        <!--        <item name="android:fontWeight"-->
     </style>
 
     <style name="vanillaSans" parent="sans">
@@ -30,6 +25,7 @@
         <item name="colorPrimaryDark">@color/standardWhite</item>
         <item name="colorAccent">@color/standardWhite</item>
         <item name="android:textColor">@color/standardBlack</item>
+        <!--        <item name="fon"-->
     </style>
 
     <style name="darkSans" parent="sans">
@@ -53,5 +49,16 @@
         <item name="android:textColor">@color/standardWhite</item>
     </style>
 
+    <style name="activityTitle" parent="Widget.AppCompat.TextView">
+
+    </style>
+
+    <style name="customRadio" parent="Widget.AppCompat.CompoundButton.RadioButton">
+
+    </style>
+
+    <style name="customButton" parent="TextAppearance.AppCompat.Button">
+        <item name="android:background">@drawable/button_bg</item>
+    </style>
 
 </resources>
