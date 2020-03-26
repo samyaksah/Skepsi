@@ -1,57 +1,92 @@
+<!--<resources>-->
+
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+<!--    </style>-->
+
+<!--    <style name="standard" parent="Theme.AppCompat">-->
+<!--            <item name="windowActionBar">false</item>-->
+<!--            <item name="windowNoTitle">true</item>-->
+<!--            <item name="android:textSize">30sp</item>-->
+
+<!--        </style>-->
+
+    <!--    <style name="sansserif" parent="standard">-->
+    <!--        &lt;!&ndash;        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>&ndash;&gt;-->
+    <!--        <item name="fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
+    <!--    </style>-->
+
+
+
+<!-- Updated upstream-->
+<!--    <style name="sans" parent="standard">-->
+<!--        &lt;!&ndash;        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>&ndash;&gt;-->
+<!--        <item name="fontFamily">@font/ibm_plex_sans</item>-->
+<!--    </style>-->
+
+<!--    <style name="serif" parent="standard">-->
+<!--        &lt;!&ndash;        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>&ndash;&gt;-->
+<!--        <item name="fontFamily">@font/ibm_plex_sans</item>-->
+<!--    </style>-->
+
+<!--    <style name="vanillaSans" parent="sans">-->
+<!--        <item name="colorPrimary">@color/standardWhite</item>-->
+<!--        <item name="colorPrimaryDark">@color/standardWhite</item>-->
+<!--        <item name="colorAccent">@color/standardWhite</item>-->
+<!--        <item name="android:textColor">@color/standardBlack</item>-->
+<!--    </style>-->
+
+<!--    <style name="darkSans" parent="sans">-->
+<!--        <item name="colorPrimary">@color/standardBlack</item>-->
+<!--        <item name="colorPrimaryDark">@color/standardBlack</item>-->
+<!--        <item name="colorAccent">@color/standardBlack</item>-->
+<!--        <item name="android:textColor">@color/standardWhite</item>-->
+<!--    </style>-->
+
+<!--    <style name="vanillaSerif" parent="serif">-->
+<!--        <item name="colorPrimary">@color/standardWhite</item>-->
+<!--        <item name="colorPrimaryDark">@color/standardWhite</item>-->
+<!--        <item name="colorAccent">@color/standardWhite</item>-->
+<!--        <item name="android:textColor">@color/standardBlack</item>-->
+<!--    </style>-->
+
+<!--    <style name="darkSerif" parent="serif">-->
+<!--        <item name="colorPrimary">@color/standardBlack</item>-->
+<!--        <item name="colorPrimaryDark">@color/standardBlack</item>-->
+<!--        <item name="colorAccent">@color/standardBlack</item>-->
+<!--        <item name="android:textColor">@color/standardWhite</item>-->
+<!--=======-->
+
+<!--    <style name="vanillaSans" parent="AppTheme">-->
+<!--        <item name="primaryColor">@color/standardWhite</item>-->
+<!--        <item name="primaryDarkColor">@color/standardWhite</item>-->
+<!--        <item name="accentColor">@color/standardWhite</item>-->
+<!--        <item name="textColor">@color/standardBlack</item>-->
+<!--        <item name="backgroundColor">@color/standardWhite</item>-->
+<!--    </style>-->
+
+<!--    <style name="darkSans" parent="AppTheme">-->
+<!--        <item name="primaryColor">@color/standardWhite</item>-->
+<!--        <item name="primaryDarkColor">@color/standardWhite</item>-->
+<!--        <item name="accentColor">@color/standardWhite</item>-->
+<!--        <item name="textColor">@color/standardBlack</item>-->
+<!--        <item name="backgroundColor">@color/standardBlack</item>-->
+<!--&gt;>>>>>> Stashed changes-->
+<!--    </style>-->
+
+
+<!--</resources>-->
+
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
     </style>
-
-    <style name="standard" parent="Theme.AppCompat">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:textSize">30sp</item>
-
-    </style>
-
-    <style name="sans" parent="standard">
-        <!--        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
-        <item name="fontFamily">@font/ibm_plex_sans</item>
-    </style>
-
-    <style name="serif" parent="standard">
-        <!--        <item name="android:fontFamily">@font/IBMPlexSans-ExtraLight</item>-->
-        <item name="fontFamily">@font/ibm_plex_sans</item>
-    </style>
-
-    <style name="vanillaSans" parent="sans">
-        <item name="colorPrimary">@color/standardWhite</item>
-        <item name="colorPrimaryDark">@color/standardWhite</item>
-        <item name="colorAccent">@color/standardWhite</item>
-        <item name="android:textColor">@color/standardBlack</item>
-    </style>
-
-    <style name="darkSans" parent="sans">
-        <item name="colorPrimary">@color/standardBlack</item>
-        <item name="colorPrimaryDark">@color/standardBlack</item>
-        <item name="colorAccent">@color/standardBlack</item>
-        <item name="android:textColor">@color/standardWhite</item>
-    </style>
-
-    <style name="vanillaSerif" parent="serif">
-        <item name="colorPrimary">@color/standardWhite</item>
-        <item name="colorPrimaryDark">@color/standardWhite</item>
-        <item name="colorAccent">@color/standardWhite</item>
-        <item name="android:textColor">@color/standardBlack</item>
-    </style>
-
-    <style name="darkSerif" parent="serif">
-        <item name="colorPrimary">@color/standardBlack</item>
-        <item name="colorPrimaryDark">@color/standardBlack</item>
-        <item name="colorAccent">@color/standardBlack</item>
-        <item name="android:textColor">@color/standardWhite</item>
-    </style>
-
 
 </resources>
+
