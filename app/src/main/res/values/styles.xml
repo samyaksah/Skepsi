@@ -6,7 +6,7 @@
     <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
     <!--    </style>-->
 
-    <style name="standard" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="standard" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:textSize">30sp</item>
@@ -51,7 +51,7 @@
         <item name="colorPrimaryDark">@color/standardWhite</item>
         <item name="colorAccent">@color/standardWhite</item>
         <item name="android:textColor">@color/standardBlack</item>
-        <item name="android:background">@color/standardBlack</item>
+        <item name="android:background">@color/standardWhite</item>
 
     </style>
 
@@ -60,7 +60,7 @@
         <item name="colorPrimaryDark">@color/standardBlack</item>
         <item name="colorAccent">@color/standardBlack</item>
         <item name="android:textColor">@color/standardWhite</item>
-        <item name="android:background">color</item>
+        <item name="android:background">@color/standardBlack</item>
 
     </style>
 

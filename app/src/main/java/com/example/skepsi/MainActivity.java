@@ -30,24 +30,29 @@ public class MainActivity extends AppCompatActivity {
 
 //        timer = new Timer();
 //        String password = sharedPrefs.getString("password", Defaults.PASSWORD);
-
+        startCounting();
 
     }
 
     void startCounting() {
         CountingTask tsk = new CountingTask(curr);
         tsk.execute();
+        Toast.makeText(this, "counting", Toast.LENGTH_LONG).show();
 
+//changeActivity();
     }
 
     public void changeActivity() {
         String text = "login";
         if (sharedPrefs.contains("username")) {
             Intent i = new Intent(curr, Login.class);
+            startActivity(i);
 
         } else {
             Intent i = new Intent(curr, SignUp.class);
             text = "sign up";
+            startActivity(i);
+
         }
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
@@ -63,7 +68,7 @@ class CountingTask extends AsyncTask<Void, Integer, Integer> {
 
     @Override
     protected Integer doInBackground(Void... voids) {
-        SystemClock.sleep(25000);
+        SystemClock.sleep(2500);
         return 1;
 
     }
