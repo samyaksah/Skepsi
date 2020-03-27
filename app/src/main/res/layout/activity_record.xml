@@ -14,60 +14,32 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Record"
-        android:id="@+id/button"
         android:layout_below="@+id/imageView"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="37dp"
-        />
+        android:text="Record"
+        android:textSize="18sp" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="STOP"
-        android:id="@+id/button2"
         android:layout_alignTop="@+id/button"
         android:layout_centerHorizontal="true"
-        />
+        android:text="STOP"
+        android:textSize="18sp" />
 
     <Button
+        android:id="@+id/record_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play"
-        android:id="@+id/button3"
-        android:layout_alignTop="@+id/button2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="STOP PLAYING RECORDING "
-        android:id="@+id/button4"
         android:layout_below="@+id/button2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        />
-
-    <Button
-        android:id="@+id/play3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:text="Play 3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/play3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:text="files" />
+        android:layout_marginTop="25dp"
+        android:onClick="viewRecord"
+        android:text="View Recordings" />
 
 </RelativeLayout>

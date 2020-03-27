@@ -21,7 +21,6 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.vanillaSans);
         setContentView(R.layout.activity_login);
 
         Executor executor = Executors.newSingleThreadExecutor();
