@@ -1,6 +1,12 @@
 package com.example.skepsi;
 
 public final class Defaults {
-    static String THEME = "dark";
+    public static final int LIGHT_SANS = 1;
+    public static final int DARK_SANS = 2;
+    public static final int LIGHT_SERIF = 3;
+    public static final int DARK_SERIF = 4;
+    //    static String THEME_DEFAULT = "dark";
     static String FONT = "sans";
+    static String USERNAME = "sans";
+    static String PASSWORD = "sans";
 }

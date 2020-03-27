@@ -1,10 +1,16 @@
 <resources>
 
 
-    <style name="standard" parent="Theme.AppCompat">
+    <!-- Base application theme. -->
+    <!--    <style name="AppTheme" parent="android:Theme.Holo.">-->
+    <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--    </style>-->
+
+    <style name="standard" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:textSize">30sp</item>
+        <item name="android:background">@color/colorPrimary</item>
 
     </style>
 
@@ -25,6 +31,8 @@
         <item name="colorPrimaryDark">@color/standardWhite</item>
         <item name="colorAccent">@color/standardWhite</item>
         <item name="android:textColor">@color/standardBlack</item>
+        <item name="android:background">@color/standardBlack</item>
+
         <!--        <item name="fon"-->
     </style>
 
@@ -33,6 +41,9 @@
         <item name="colorPrimaryDark">@color/standardBlack</item>
         <item name="colorAccent">@color/standardBlack</item>
         <item name="android:textColor">@color/standardWhite</item>
+        <item name="android:background">@color/standardBlack</item>
+
+
     </style>
 
     <style name="vanillaSerif" parent="serif">
@@ -40,6 +51,8 @@
         <item name="colorPrimaryDark">@color/standardWhite</item>
         <item name="colorAccent">@color/standardWhite</item>
         <item name="android:textColor">@color/standardBlack</item>
+        <item name="android:background">@color/standardBlack</item>
+
     </style>
 
     <style name="darkSerif" parent="serif">
@@ -47,11 +60,14 @@
         <item name="colorPrimaryDark">@color/standardBlack</item>
         <item name="colorAccent">@color/standardBlack</item>
         <item name="android:textColor">@color/standardWhite</item>
+        <item name="android:background">color</item>
+
     </style>
 
     <style name="activityTitle" parent="Widget.AppCompat.TextView">
 
     </style>
+
 
     <style name="customRadio" parent="Widget.AppCompat.CompoundButton.RadioButton">
 

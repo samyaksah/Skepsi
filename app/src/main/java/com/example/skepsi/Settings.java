@@ -17,9 +17,9 @@ public class Settings extends AppCompatActivity implements RadioGroup.OnCheckedC
     protected void onCreate(Bundle savedInstanceState) {
         settings = getSharedPreferences("settings", Context.MODE_PRIVATE);
 
-        if (settings.contains("font")) {
-            font = settings.getString("font", Defaults.FONT);
-            theme = settings.getString("theme", Defaults.THEME);
+        if (settings.contains("theme")) {
+
+            theme = settings.getString("theme", Defaults.FONT);
 
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_settings);
