@@ -7,7 +7,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,20 +36,19 @@ public class MainActivity extends AppCompatActivity {
     void startCounting() {
         CountingTask tsk = new CountingTask(curr);
         tsk.execute();
-        Toast.makeText(this, "counting", Toast.LENGTH_LONG).show();
-
-//changeActivity();
     }
 
     public void changeActivity() {
-        String text = "login";
-
-            Intent i = new Intent(curr, SignUp.class);
-            text = "sign up";
-            startActivity(i);
-            finish();
-
-
+//        String text = "login";
+        Intent i;
+        if (sharedPrefs.contains("username")) {
+            i = new Intent(curr, Login.class);
+        } else {
+            i = new Intent(curr, SignUp.class);
+        }
+//            text = "sign up";
+        startActivity(i);
+        finish();
     }
 }
 
@@ -64,7 +62,7 @@ class CountingTask extends AsyncTask<Void, Integer, Integer> {
 
     @Override
     protected Integer doInBackground(Void... voids) {
-        SystemClock.sleep(2500);
+        SystemClock.sleep(4500);
         return 1;
 
     }

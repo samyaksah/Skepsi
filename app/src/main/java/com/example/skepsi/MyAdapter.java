@@ -56,7 +56,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
         holder.recordingname.setText(final_name);
-        holder.lat.setText(latitude);
+        holder.lati.setText(latitude);
         holder.longi.setText(longitude);
         holder.address.setText(address);
 
@@ -128,7 +128,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView recordingname, kebab, lat, longi, address;
+        TextView recordingname, kebab, lati, longi, address;
         public LinearLayout myLayout;
         TableRow selection, menubar;
 
@@ -141,7 +141,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             selection = itemView.findViewById(R.id.selection_box);
             menubar = itemView.findViewById(R.id.menubar);
             kebab = itemView.findViewById(R.id.textViewOptions);
-            lat = itemView.findViewById(R.id.lat);
+            lati = itemView.findViewById(R.id.lati);
             longi = itemView.findViewById(R.id.longi);
             address = itemView.findViewById(R.id.address);
 

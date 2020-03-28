@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="settingsTopDim" />
+    <dimen name="standardPad">15dp</dimen>
+    <dimen name="playButSize">100dp</dimen>
 </resources>

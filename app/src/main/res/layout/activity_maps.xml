@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -29,7 +29,14 @@
             android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="List View  "
-            android:textSize="18sp" />
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#00FFFFFF"
+            android:textColorHint="#00FFFFFF"
+            android:textSize="18sp"
+            android:thumbTint="#B90000"
+            android:track="@drawable/bar"
+            android:trackTint="#B90000"
+            android:trackTintMode="src_atop" />
     </LinearLayout>
 </RelativeLayout>
 

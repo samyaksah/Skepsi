@@ -13,7 +13,8 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:shrinkColumns="1">
 
         <TableRow
             android:layout_width="match_parent"
@@ -27,21 +28,22 @@
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:shrinkColumns="1">
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content">
 
                         <TextView
                             android:id="@+id/recordingname"
                             android:layout_width="301dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:autoText="true"
                             android:gravity="left"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="New Text"
-                            android:textSize="24sp" />
+                            android:textSize="36sp" />
                     </TableRow>
 
                     <TableRow
@@ -50,41 +52,76 @@
 
                         <TableLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="wrap_content"
+                            android:shrinkColumns="2">
 
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5dp"
+                                    android:text="Address: " />
+
+                                <TextView
+                                    android:id="@+id/address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoText="true"
+                                    android:padding="5dp"
+                                    android:text="Address" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="0dp">
 
                                 <TextView
                                     android:id="@+id/lat"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:padding="10dp"
+                                    android:padding="5dp"
+                                    android:text="Latitude:" />
+
+                                <TextView
+                                    android:id="@+id/lati"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoText="true"
+                                    android:padding="5dp"
                                     android:text="Latitude" />
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="0dp">
+
+                                <TextView
+                                    android:id="@+id/longe"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5dp"
+                                    android:text="Longitude: " />
 
                                 <TextView
                                     android:id="@+id/longi"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:padding="10dp"
+                                    android:autoText="true"
+                                    android:padding="5dp"
                                     android:text="Longitude" />
                             </TableRow>
 
                         </TableLayout>
                     </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/address"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="10dp"
-                            android:text="Address" />
-                    </TableRow>
                 </TableLayout>
 
             </TableRow>

@@ -32,10 +32,7 @@ public class SignUp extends AppCompatActivity {
         submit = findViewById(R.id.submitButton);
         submit.setOnClickListener(myListener);
         finger.setOnClickListener(switchListener);
-        sharedPrefs = getSharedPreferences(getResources().getString(R.string.sharedPreferencesFileKey), Context.MODE_PRIVATE);
-        if(sharedPrefs.contains("username") && sharedPrefs.contains("password")){
-            gotoActivity2();
-        }
+        sharedPrefs = getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
 
 
 

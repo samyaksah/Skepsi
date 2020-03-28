@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
         retrButton = findViewById(R.id.retrButton);
 //        regButton = findViewById(R.id.regButton);
 
-        sharedPrefs = getSharedPreferences(getResources().getString(R.string.sharedPreferencesFileKey), Context.MODE_PRIVATE);
+        sharedPrefs = getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
         finger = sharedPrefs.getString("useFinger", DEFAULT);
         Log.d(TAG, "onCreate: fingerprint " + finger);
 
@@ -77,10 +77,10 @@ public class Login extends AppCompatActivity {
         });
 
         final BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Set the title to display.")
-                .setSubtitle("Set the subtitle to display.")
-                .setDescription("Set the description to display")
-                .setNegativeButtonText("Negative Button")
+                .setTitle("Place finger on scanner")
+//                .setSubtitle("Set the subtitle to display.")
+//                .setDescription("")
+                .setNegativeButtonText("Cancel")
                 .build();
 
 
@@ -91,7 +91,7 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Log.d(TAG, "onCreate: mannual ");
-                    sharedPrefs = getSharedPreferences(getResources().getString(R.string.sharedPreferencesFileKey), Context.MODE_PRIVATE);
+                    sharedPrefs = getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
                     username = sharedPrefs.getString("username", DEFAULT);
                     password = sharedPrefs.getString("password", DEFAULT);
                     if (username.equals(DEFAULT) || password.equals(DEFAULT)) {
