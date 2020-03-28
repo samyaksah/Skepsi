@@ -90,6 +90,20 @@ public class playLastRecording extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+        // Put your own code here which you want to run on back button click.
+
+        if(mediaPlayer != null){
+            mediaPlayer.stop();
+            Toast.makeText(this,"Playback stopped", Toast.LENGTH_LONG).show();
+        }
+
+
+        super.onBackPressed();
+    }
+
     public void viewRecord(View view){
         Intent intent = new Intent(this, RecyclerActivity.class);
         startActivity(intent);

@@ -18,4 +18,6 @@
     <string name="color_option3">vignelli</string>
     <string name="un">Username</string>
     <string name="pw">Password</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="sharedPreferencesFileKey">Shared Preference</string>
 </resources>

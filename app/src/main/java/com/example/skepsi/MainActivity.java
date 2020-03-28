@@ -44,17 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeActivity() {
         String text = "login";
-        if (sharedPrefs.contains("username")) {
-            Intent i = new Intent(curr, Login.class);
-            startActivity(i);
 
-        } else {
             Intent i = new Intent(curr, SignUp.class);
             text = "sign up";
             startActivity(i);
+            finish();
 
-        }
-        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+
     }
 }
 

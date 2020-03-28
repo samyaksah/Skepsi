@@ -15,7 +15,10 @@ public class  MyHelper extends SQLiteOpenHelper {
             "CREATE TABLE "+
                     Constants.TABLE_NAME + " (" +
                     Constants.UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    Constants.NAME + " TEXT);" ;
+                    Constants.NAME + " TEXT, " +
+                    Constants.LAT + " TEXT, " +
+                    Constants.LONGI + " TEXT, " +
+                    Constants.ADD + " TEXT);" ;
 
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + Constants.TABLE_NAME;
 
