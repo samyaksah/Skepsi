@@ -54,7 +54,7 @@
         android:drawableTint="@color/colorPrimary"
         android:ems="8"
         android:hint="@string/prompt_password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="@color/colorPrimary"
         android:textCursorDrawable="@drawable/button_bg_dark_select"
         app:layout_constraintEnd_toEndOf="parent"

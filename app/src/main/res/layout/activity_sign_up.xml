@@ -9,8 +9,10 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:textSize="100sp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="36dp"
+        android:text="Sign Up"
+        android:textSize="56sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/un"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
         app:layout_constraintStart_toStartOf="@+id/editTextUsername" />
 
@@ -26,16 +29,16 @@
         android:id="@+id/editTextUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/button_bg_dark_unselect"
         android:ems="8"
         android:inputType="textPersonName"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -43,9 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:background="@drawable/button_bg_dark_unselect"
         android:ems="8"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextUsername"
@@ -56,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pw"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextPassword" />
 
@@ -63,11 +67,10 @@
         android:id="@+id/switch3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginLeft="145dp"
-        android:layout_marginTop="40dp"
-        android:text="Switch"
+        android:layout_marginTop="72dp"
+        android:text="Always use with fingerprint"
         android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
@@ -75,10 +78,11 @@
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginLeft="145dp"
-        android:layout_marginTop="20dp"
-        android:text="Login"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_bg_dark_unselect"
+        android:text="Sign Up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch3" />
 
