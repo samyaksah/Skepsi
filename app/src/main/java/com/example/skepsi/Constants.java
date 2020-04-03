@@ -1,5 +1,5 @@
 package com.example.skepsi;
-
+// values for the database
 public class Constants {
     public static final String DATABASE_NAME = "recordings";
     public static final String TABLE_NAME = "recordingsTable";

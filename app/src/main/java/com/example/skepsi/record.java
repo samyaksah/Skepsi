@@ -17,7 +17,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -77,11 +76,12 @@ public class record extends AppCompatActivity {
         db = new MyDatabase(this);
         Log.d(TAG, "checkvalue before "+ toastCounter);
 
+        //start looking for the device location
         listener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
 
-
+                //ty the geocoder for exact address from lat and lang
                 try {
                     addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
                 } catch (IOException e) {
@@ -99,15 +99,15 @@ public class record extends AppCompatActivity {
                 longi.setText("" + location.getLongitude());
                 lat.setText("" + location.getLatitude());
                 address.setText("Your address is: " + addressing + city + state + country + postalCode);
-                if(!toastCounter) {
-                    Toast.makeText(record.this, "GPS Located - You can start recording now",
-                            Toast.LENGTH_LONG).show();
-
-                    toastCounter = true;
-                }
+//                if(!toastCounter) {
+//                    Toast.makeText(record.this, "GPS Located - You can start recording now",
+//                            Toast.LENGTH_LONG).show();
+//
+//                    toastCounter = true;
+//                }
                 lati = String.valueOf(location.getLatitude());
                 longit = String.valueOf(location.getLongitude());
-                Complete_address = addressing + " " + city + " " + state + " " + country + " " + postalCode;
+                Complete_address = addressing + " " + city + " " + state + " " + country + " " + postalCode; //combine all the values into one string
 
 
 
@@ -126,6 +126,7 @@ public class record extends AppCompatActivity {
             @Override
             public void onProviderDisabled(String s) {
 
+                // ask for the users's permission before using it
                 Intent i = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivity(i);
             }
@@ -148,6 +149,7 @@ public class record extends AppCompatActivity {
             }
         }
 
+        // use gps every 0.5 sec for 0 delta
         locationManager.requestLocationUpdates("gps", 500, 0, listener);
         Log.d(TAG, "onCreate: "+ toastCounter);
 
@@ -158,12 +160,13 @@ public class record extends AppCompatActivity {
 
         buttonStop.setEnabled(false);
 
+        //when the record button is pressed
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+//                buttonStart.setBackground(getResources().getDrawable(R.drawable.ellipse_3__stroke__1));
                 if (checkPermission()) {
-
+                //get the path and create the name of the file
                     AudioSavePathInDevice =
                             Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
                                     "AudioRecording_" + CreateRandomAudioFileName(5) + ".3gp";
@@ -182,8 +185,8 @@ public class record extends AppCompatActivity {
                     buttonStart.setEnabled(false);
                     buttonStop.setEnabled(true);
 
-                    Toast.makeText(record.this, "Recording started",
-                            Toast.LENGTH_LONG).show();
+//                    Toast.makeText(record.this, "Recording started",
+//                            Toast.LENGTH_LONG).show();
 
                     Log.d(TAG, "onLocationChanged: " + lati + longit + Complete_address);
 
@@ -194,6 +197,7 @@ public class record extends AppCompatActivity {
             }
         });
 
+        //when the stop button is pressed
         buttonStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -207,9 +211,9 @@ public class record extends AppCompatActivity {
                 String name = AudioSavePathInDevice;
                 long id = db.insertData(name, lati, longit, Complete_address);
                 if (id < 0) {
-                    Toast.makeText(record.this, name + "fail", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(record.this, name + "fail", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(record.this, name + "success", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(record.this, name + "success", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -219,6 +223,7 @@ public class record extends AppCompatActivity {
 
 
 
+    //to view the recoding go to recycler view
     public void viewRecord(View view) {
         Intent intent = new Intent(this, RecyclerActivity.class);
         startActivity(intent);
@@ -232,7 +237,7 @@ public class record extends AppCompatActivity {
         return toastCounter;
     }
 
-
+    //as for permission for gps
     void configure_button() {
         // first check for permissions
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
@@ -255,7 +260,7 @@ public class record extends AppCompatActivity {
         mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
         mediaRecorder.setOutputFile(AudioSavePathInDevice);
     }
-    ////FILE NAME CODE - NEEDS TO BE CHANGED----------------------------->
+    ////create a random file name
     public String CreateRandomAudioFileName(int string){
         StringBuilder stringBuilder = new StringBuilder( string );
         int i = 0 ;
@@ -287,10 +292,10 @@ public class record extends AppCompatActivity {
                             PackageManager.PERMISSION_GRANTED;
 
                     if (StoragePermission && RecordPermission) {
-                        Toast.makeText(record.this, "Permission Granted",
-                                Toast.LENGTH_LONG).show();
+//                        Toast.makeText(record.this, "Permission Granted",
+//                                Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(record.this,"Permission Denied",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(record.this,"Permission Denied",Toast.LENGTH_LONG).show();
                     }
                 }
                 break;

@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         tsk.execute();
     }
 
+    //use intent to either go to login or signup page
     public void changeActivity() {
 //        String text = "login";
         Intent i;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
+//use async to implement a splash screen
 class CountingTask extends AsyncTask<Void, Integer, Integer> {
     private final MainActivity aty;
 

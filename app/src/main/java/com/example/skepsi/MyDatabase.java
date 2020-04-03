@@ -16,7 +16,7 @@ public class MyDatabase {
         context = c;
         helper = new MyHelper(context);
     }
-
+    //insert data into the database
     public long insertData (String name, String lat, String longi, String address)
     {
         db = helper.getWritableDatabase();
@@ -29,6 +29,7 @@ public class MyDatabase {
         return id;
     }
 
+    //get data from the database
     public Cursor getData()
     {
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -51,28 +52,13 @@ public class MyDatabase {
 
         return cursor;
 
-//        StringBuffer buffer = new StringBuffer();
-//        while (cursor.moveToNext()) {
-//
-//            int index1 = cursor.getColumnIndex(Constants.NAME);
-//            int index2 = cursor.getColumnIndex(Constants.TYPE);
-//            int index3 = cursor.getColumnIndex(Constants.LOCATION);
-//            int index4 = cursor.getColumnIndex(Constants.LATIN_NAME);
-//            String plantName = cursor.getString(index1);
-//            String plantType = cursor.getString(index2);
-//            String plantLocation = cursor.getString(index3);
-//            String plantLatinName = cursor.getString(index4);
-//            buffer.append(plantName + " " + plantType + " " + plantLocation + " " + plantLatinName + "\n");
-//        }
-//        return buffer.toString();
+
     }
 
     public int deleteRow(String name){
         SQLiteDatabase db = helper.getWritableDatabase();
         String[] whereArgs = {name};
-//        String strSQL = "DELETE FROM " + Constants.TABLE_NAME + " WHERE name = " + "'" + name + "'" + ";" ;
-//        Log.d(TAG, "deleteRow:" + strSQL);
-//        db.execSQL(strSQL);
+
         int count;
 
 
@@ -90,14 +76,7 @@ public class MyDatabase {
         return count;
     }
 
-//    public int updateRow(String name){
-//        SQLiteDatabase db = helper.getWritableDatabase();
-//        String[] whereArgs = {name};
-//        String strSQL = "UPDATE myTable SET Column1 ="+ someValue "WHERE columnId = " + someValue;
-//
-//        db.execSQL(strSQL);
-//        return count;
-//    }
+
 
 
 }

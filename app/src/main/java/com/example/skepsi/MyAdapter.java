@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -55,27 +54,29 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
 
+        //set all the values and recoding names in the recycler view
         holder.recordingname.setText(final_name);
-        holder.lati.setText(latitude);
+        holder.latit.setText(latitude);
         holder.longi.setText(longitude);
         holder.address.setText(address);
 
+        // takes you to the play recoding activity
         holder.selection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String[] rows = (list.get(position)).split("\\?");
                 String path = rows[0];
-                Toast.makeText(context,
-                        "You have clicked " + path,
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context,
+//                        "You have clicked " + path,
+//                        Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(context, playLastRecording.class);
                 intent.putExtra("REC_NAME", path);
                 context.startActivity(intent);
             }
         });
-
+        //menu button for each recording
         holder.menubar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,17 +92,17 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                         switch (item.getItemId()) {
                             case R.id.menu1:
                                 //handle menu1 click
-                                Toast.makeText(context,
-                                        "To be Implemented with Room Persistence Library ",
-                                        Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(context,
+//                                        "To be Implemented with Room Persistence Library ",
+//                                        Toast.LENGTH_SHORT).show();
 //
 
                                 break;
                             case R.id.menu2:
                                 //handle menu2 click
-                                Toast.makeText(context,
-                                        "To be Implemented with Room Persistence Library ",
-                                        Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(context,
+//                                        "To be Implemented with Room Persistence Library ",
+//                                        Toast.LENGTH_SHORT).show();
                                 break;
                             case R.id.menu3:
                                 //handle menu3 click
@@ -128,7 +129,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView recordingname, kebab, lati, longi, address;
+        TextView recordingname, kebab, latit, longi, address;
         public LinearLayout myLayout;
         TableRow selection, menubar;
 
@@ -141,7 +142,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             selection = itemView.findViewById(R.id.selection_box);
             menubar = itemView.findViewById(R.id.menubar);
             kebab = itemView.findViewById(R.id.textViewOptions);
-            lati = itemView.findViewById(R.id.lati);
+            latit = itemView.findViewById(R.id.latit);
             longi = itemView.findViewById(R.id.longi);
             address = itemView.findViewById(R.id.address);
 

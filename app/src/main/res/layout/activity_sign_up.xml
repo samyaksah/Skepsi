@@ -49,6 +49,7 @@
         android:background="@drawable/button_bg_dark_unselect"
         android:ems="8"
         android:inputType="textPassword"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextUsername"

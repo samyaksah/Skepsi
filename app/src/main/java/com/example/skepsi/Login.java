@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +38,7 @@ public class Login extends AppCompatActivity {
         retrButton = findViewById(R.id.retrButton);
 //        regButton = findViewById(R.id.regButton);
 
+        //use shared prefs to check if the user has selected to use fingerprint as the mode of authentication
         sharedPrefs = getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
         finger = sharedPrefs.getString("useFinger", DEFAULT);
         Log.d(TAG, "onCreate: fingerprint " + finger);
@@ -48,6 +48,8 @@ public class Login extends AppCompatActivity {
         FragmentActivity activity = this;
         Log.d(TAG, "onCreate: 2");
 
+
+        //Start the fingerprint authentication process and check if it succeded
         final BiometricPrompt biometricPrompt = new BiometricPrompt(activity, executor, new BiometricPrompt.AuthenticationCallback() {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
@@ -76,6 +78,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        // set string values that will show up on the screen
         final BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Place finger on scanner")
 //                .setSubtitle("Set the subtitle to display.")
@@ -85,6 +88,8 @@ public class Login extends AppCompatActivity {
 
 
         Log.d(TAG, "onCreate: 3");
+
+        // if the user chose to mannually login...do this
         if(finger.equals("false")) {
             Log.d(TAG, "onCreate: inside false");
             retrButton.setOnClickListener(new View.OnClickListener() {
@@ -95,17 +100,18 @@ public class Login extends AppCompatActivity {
                     username = sharedPrefs.getString("username", DEFAULT);
                     password = sharedPrefs.getString("password", DEFAULT);
                     if (username.equals(DEFAULT) || password.equals(DEFAULT)) {
-                        Toast.makeText(getApplicationContext(), "No data found", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(), "No data found", Toast.LENGTH_LONG).show();
                     } else if (username.equals(usernameTextView.getText().toString()) && password.equals(passwordTextView.getText().toString())) {
-                        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
                         gotoSettingsActivity();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Incorrect Data: Please Try Again", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(), "Incorrect Data: Please Try Again", Toast.LENGTH_LONG).show();
                     }
                 }
             });
+            //else do this (use fingerprint)
         }else if(finger.equals("true")){
-            Toast.makeText(getApplicationContext(), "using fingerprint", Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), "using fingerprint", Toast.LENGTH_LONG).show();
             Log.d(TAG, "onCreate: using finger " + finger);
             biometricPrompt.authenticate(promptInfo);
         }

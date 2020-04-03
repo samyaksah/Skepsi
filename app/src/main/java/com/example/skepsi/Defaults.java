@@ -1,5 +1,6 @@
 package com.example.skepsi;
 
+//values for the theme selection
 public final class Defaults {
     public static final int LIGHT_SANS = 1;
     public static final int DARK_SANS = 2;

@@ -41,7 +41,7 @@ public class RecyclerActivity extends AppCompatActivity implements AdapterView.O
         layoutManager = new LinearLayoutManager(this);
         toggle = findViewById(R.id.switch1);
         myRecycler.setLayoutManager(layoutManager);
-        cursor = db.getData();
+        cursor = db.getData(); //get data from the datbase
 
 
 
@@ -55,7 +55,7 @@ public class RecyclerActivity extends AppCompatActivity implements AdapterView.O
         cursor.moveToFirst();
         int pos = 0;
 
-
+        //store data in an arraylist
         while (!cursor.isAfterLast()) {
             String recordingName = cursor.getString(index1);
             String latitude = cursor.getString(index2);
@@ -68,12 +68,13 @@ public class RecyclerActivity extends AppCompatActivity implements AdapterView.O
             cursor.moveToNext();
         }
 
-
+        //add an adapater and send the arraylist
         myAdapter = new MyAdapter(mArrayList, this);
 
 //        Toast.makeText(getApplicationContext(), "getting closer" , Toast.LENGTH_SHORT).show();
         myRecycler.setAdapter(myAdapter);
 
+        // when toggled, go to the maps page
         toggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

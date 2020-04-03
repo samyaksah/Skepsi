@@ -37,7 +37,7 @@ public class SignUp extends AppCompatActivity {
 
 
     }
-
+    //set the finger value to true if user toggles the switch
     private Switch.OnClickListener switchListener = new Button.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -45,6 +45,7 @@ public class SignUp extends AppCompatActivity {
         }
     };
 
+    //send the credentials to shared prefs
     private Button.OnClickListener myListener = new Button.OnClickListener() {
         @Override
         public void onClick(View v) {

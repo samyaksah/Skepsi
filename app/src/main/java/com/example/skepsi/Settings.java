@@ -27,6 +27,7 @@ public class Settings extends AppCompatActivity implements RadioGroup.OnCheckedC
     }
 
     @Override
+    //working on it
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
 //        String initFont = font, initCol = theme;
 //

@@ -1,12 +1,10 @@
 package com.example.skepsi;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,7 +40,7 @@ public class playLastRecording extends AppCompatActivity {
         }
         AudioSavePathInDevice = newString;
 
-
+        //start the recording
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) throws IllegalArgumentException,
@@ -50,14 +48,7 @@ public class playLastRecording extends AppCompatActivity {
 
                 buttonStop.setEnabled(true);
 
-//                try {
-//                    mediaRecorder.prepare();
-//                    mediaRecorder.start();
-//                } catch (IllegalStateException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+
 
                 mediaPlayer = new MediaPlayer();
                 try {
@@ -68,12 +59,12 @@ public class playLastRecording extends AppCompatActivity {
                 }
 
                 mediaPlayer.start();
-                Toast.makeText(playLastRecording.this, AudioSavePathInDevice,
-                        Toast.LENGTH_LONG).show();
+//                Toast.makeText(playLastRecording.this, AudioSavePathInDevice,
+//                        Toast.LENGTH_LONG).show();
             }
         });
 
-
+        //stop the recording
         buttonStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,23 +84,21 @@ public class playLastRecording extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        // Put your own code here which you want to run on back button click.
+        // if the back button is press, the recording stops
 
         if(mediaPlayer != null){
             mediaPlayer.stop();
-            Toast.makeText(this,"Playback stopped", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this,"Playback stopped", Toast.LENGTH_LONG).show();
         }
 
 
         super.onBackPressed();
     }
 
-    public void viewRecord(View view){
-        Intent intent = new Intent(this, RecyclerActivity.class);
-        startActivity(intent);
-    }
 
 
+
+    //save the audio path is the phone orientation is changed
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -119,10 +108,11 @@ public class playLastRecording extends AppCompatActivity {
         outState.putString("SAVED_STATE_PATH", AudioSavePathInDevice);
     }
 
+    //restore the audio path
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Log.d("SaveState", "onRestoreInstanceState called");
+//        Log.d("SaveState", "onRestoreInstanceState called");
 
         //retrieve current counter value from bundle based on key
         String retrievedPath = savedInstanceState.getString("SAVED_STATE_PATH");
