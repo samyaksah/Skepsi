@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 
 public class MyDatabase {
@@ -55,25 +56,20 @@ public class MyDatabase {
 
     }
 
-    public int deleteRow(String name){
+    public long deleteRow(String name){
+        long count;
+        Log.d(TAG, "deleteRow: " + name);
+        String[] rows = (name).split("\\?");
         SQLiteDatabase db = helper.getWritableDatabase();
-        String[] whereArgs = {name};
-
-        int count;
-
-
-        db.beginTransaction();
-        try {
-            count = db.delete(Constants.TABLE_NAME, Constants.NAME + "=?", whereArgs);
-            db.setTransactionSuccessful();
-        } catch(Exception e) {
-            //Error in between database transaction
-            count = 0;
-        } finally {
-            db.endTransaction();
-        }
-
+        String[] whereArgs = {rows[0]};
+        count = db.delete(Constants.TABLE_NAME, Constants.NAME + "=?", whereArgs);
         return count;
+
+//        String strSQL = "DELETE FROM " + Constants.TABLE_NAME + " WHERE name = " + "'" + name + "'" + ";" ;
+//        count = db.execSQL(strSQL);
+
+
+
     }
 
 

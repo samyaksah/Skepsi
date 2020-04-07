@@ -16,6 +16,7 @@ public class playLastRecording extends AppCompatActivity {
     Button buttonStart, buttonStop ;
     String AudioSavePathInDevice = null;
     MediaPlayer mediaPlayer ;
+    private static final String TAG = "playLastRecording";
 
 
     @Override
@@ -34,6 +35,7 @@ public class playLastRecording extends AppCompatActivity {
                 newString= null;
             } else {
                 newString= extras.getString("REC_NAME");
+                Log.d(TAG, "onCreate: " + newString);
             }
         } else {
             newString= (String) savedInstanceState.getSerializable("REC_NAME");
@@ -88,7 +90,7 @@ public class playLastRecording extends AppCompatActivity {
 
         if(mediaPlayer != null){
             mediaPlayer.stop();
-//            Toast.makeText(this,"Playback stopped", Toast.LENGTH_LONG).show();
+            Log.d(TAG, "onBackPressed: send back");
         }
 
 

@@ -92,24 +92,39 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                         switch (item.getItemId()) {
                             case R.id.menu1:
                                 //handle menu1 click
+                                long count = db.deleteRow(list.get(position));
+                                if(count != 0){
+                                    Intent refresh = new Intent(context, record.class);
+                                    refresh.putExtra("REFRESH", count);
+//                                    Toast.makeText(context,
+//                                            "sending data ",
+//                                            Toast.LENGTH_SHORT).show();
+                                    context.startActivity(refresh);
+                                }
 //                                Toast.makeText(context,
 //                                        "To be Implemented with Room Persistence Library ",
 //                                        Toast.LENGTH_SHORT).show();
 //
 
                                 break;
+//                            case R.id.menu2:
+//                                //handle menu2 click
+////                                Toast.makeText(context,
+////                                        "To be Implemented with Room Persistence Library ",
+////                                        Toast.LENGTH_SHORT).show();
+//                                break;
                             case R.id.menu2:
-                                //handle menu2 click
-//                                Toast.makeText(context,
-//                                        "To be Implemented with Room Persistence Library ",
-//                                        Toast.LENGTH_SHORT).show();
-                                break;
-                            case R.id.menu3:
                                 //handle menu3 click
 //
 
+                                String[] rows = (list.get(position)).split("\\?");
+                                String path = rows[0];
+//                Toast.makeText(context,
+//                        "You have clicked " + path,
+//                        Toast.LENGTH_SHORT).show();
+
                                 Intent intent = new Intent(context, playLastRecording.class);
-                                intent.putExtra("REC_NAME", list.get(position));
+                                intent.putExtra("REC_NAME", path);
                                 context.startActivity(intent);
                                 break;
                         }

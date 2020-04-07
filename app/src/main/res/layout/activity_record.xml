@@ -121,7 +121,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_bg_dark_unselect"
-        android:onClick="viewRecord"
         android:padding="@dimen/standardPad"
         android:text="View Recordings" />
 

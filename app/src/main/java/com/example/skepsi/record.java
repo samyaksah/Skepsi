@@ -53,6 +53,7 @@ public class record extends AppCompatActivity {
     String add;
     List<Address> addresses;
     public boolean toastCounter = false;
+    long refresh;
 
     String lati, longit, Complete_address = null;
 
@@ -75,6 +76,25 @@ public class record extends AppCompatActivity {
         random = new Random();
         db = new MyDatabase(this);
         Log.d(TAG, "checkvalue before "+ toastCounter);
+
+        try {
+            Bundle extras = getIntent().getExtras();
+            if (extras == null) {
+                Log.d(TAG, "onCreate: empty");
+                refresh = Long.parseLong(null);
+            } else {
+
+                Log.d(TAG, "onCreate: not empty");
+                refresh = extras.getLong("REFRESH");
+                if (refresh != 0) {
+//                    Toast.makeText(record.this, "Sending you to view recordings",
+//                            Toast.LENGTH_LONG).show();
+                    viewRecord();
+                }
+            }
+        }catch(Exception e){
+            Log.d(TAG, "onCreate: nothing works");
+        }
 
         //start looking for the device location
         listener = new LocationListener() {
@@ -218,13 +238,21 @@ public class record extends AppCompatActivity {
             }
         });
 
+        fileDir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(record.this, "Sending you to normal",
+//                        Toast.LENGTH_LONG).show();
+                viewRecord();            }
+        });
+
 
     }
 
 
 
     //to view the recoding go to recycler view
-    public void viewRecord(View view) {
+    public void viewRecord() {
         Intent intent = new Intent(this, RecyclerActivity.class);
         startActivity(intent);
     }
